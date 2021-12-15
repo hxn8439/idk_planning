@@ -67,7 +67,7 @@ root@3id89cj5:~/catkin_ws#
   rosrun idk_planning main.py
   ``` 
    11. UR5 robotic arm should be executing and a camera feed GUI shall be display on screen.
-   
+   ```
 #### . References 
 
 __######## Attention: This repository is closed for the senior design project and will discontinue the development as of 12/13/2021. H. Nguyen 12/13/2021###########__
