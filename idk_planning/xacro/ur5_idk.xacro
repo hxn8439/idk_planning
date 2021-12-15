@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="idk_with_nozzle">
+
+    <xacro:property name="nozzle_diameter" value="0.015"/>
+    <xacro:property name="nozzle_length" value="0.165"/>    
+    
+    <xacro:include filename="$(find ur_description)/urdf/inc/ur5_macro.xacro"/>
+    <xacro:include filename="$(find idk_planning)/xacro/idk_vacuum_nozzle.xacro"/>
+
+    <xacro:macro name="ur5_with_vacuum" params="prefix name diameter length">
+        <!-- define the UR5 arm -->
+        <xacro:ur5_robot prefix="${prefix}" />
+
+        <!-- define the vacuum tube -->
+        <xacro:tube prefix="${prefix}" name="${name}" diameter="${diameter}" length="${length}" />
+
+        <!-- attaching the vacuum tube -->
+        <joint name="tool0-vacuum_tube" type="fixed">
+            <parent link="${prefix}tool0"/>
+            <child link="${prefix}${name}"/>
+            <origin xyz="0.0 0.0 ${length/2}" rpy="0.0 0.0 0.0"/>
+        </joint>
+
+        <!-- give an extra planning frame -->
+        <link name="${prefix}vacuum_tip"/>
+        <joint name="${prefix}vacuum_tip_joint" type="fixed">
+            <parent link="${prefix}tool0"/>
+            <child link="${prefix}vacuum_tip"/>
+            <origin xyz="0.0 0.0 ${length}"/>
+        </joint>
+
+    </xacro:macro>
+
+    <xacro:ur5_with_vacuum prefix="" name="vacuum_tube" diameter="${nozzle_diameter}" length="${nozzle_length}" />
+
+</robot>
