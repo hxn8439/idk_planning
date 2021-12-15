@@ -19,6 +19,9 @@
 sudo git clone  https://github.com/hxn8439/Ubuntu_18.04_Docker_Script
 ```
 
+2. Create a docker image and container -refer to the docker flowchart for the following commands in that repository to build a catkin workspace using ROS.
+
+
 #### . References 
 
 __######## Attention: This repository is closed for the senior design project and will discontinue the development as of 12/13/2021. H. Nguyen 12/13/2021###########__
