@@ -21,7 +21,53 @@ sudo git clone  https://github.com/hxn8439/Ubuntu_18.04_Docker_Script
 
 2. Create a docker image and container -refer to the docker flowchart for the following commands in that repository to build a catkin workspace using ROS.
 
+3. Navigate to the root folder of the catkin workspace and execute."catkin clean" is to wipe and clean catkin workspace. make sure that when executing this command, it has to be at the root of the workspace folder e.g. /catkin_ws/ 
+root@3id89cj5:~/catkin_ws#
+```
+ catkin clean
+```
 
+4. Navigate to src folder in catkin workspace and execute the following CLI commands:
+root@3id89cj5:~/catkin_ws/src#
+ ```
+  git clone https://github.com/hxn8439/idk_planning.git 
+  git clone https://github.com/hxn8439/fmauch_universal_robot.git
+  git clone https://github.com/hxn8439/realsense-ros.git
+  git clone https://github.com/hxn8439/Universal_Robots_ROS_Driver.git
+ ```
+ 5. Navigate back to the root folder of the catkin workspace and build the ROS packages under directory using CLI commands:
+root@3id89cj5:~/catkin_ws#
+  ```
+   catkin_make
+   source devel/setup.bash  
+  ```
+ 6. After that, execute the following CLI command:
+root@3id89cj5:~/catkin_ws#
+  ```
+  connect_robot
+  ``` 
+  
+  7. After that, execute the following command on ROS Tablet:
+  ```
+  connect_idk
+  ``` 
+  8. After that, execute the following CLI command:
+root@3id89cj5:~/catkin_ws#
+  ```
+  connect_moveit
+  ``` 
+   9. After that, execute the following CLI command:
+root@3id89cj5:~/catkin_ws#
+  ```
+  connect_realsense
+  ``` 
+   10. After that, execute the following CLI command:
+root@3id89cj5:~/catkin_ws#
+  ```
+  rosrun idk_planning main.py
+  ``` 
+   11. UR5 robotic arm should be executing and a camera feed GUI shall be display on screen.
+   
 #### . References 
 
 __######## Attention: This repository is closed for the senior design project and will discontinue the development as of 12/13/2021. H. Nguyen 12/13/2021###########__
