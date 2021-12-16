@@ -1,7 +1,7 @@
 ### Automation of the UR5 pick, place, and sort in Physical Environment with a RealSense camera and vacuum suction gripper. 
 
 - Video demos:
-  [`Simulation video`]()
+  [`Simulation video`](https://youtu.be/WiZtcR9hqvM)
 
 - Citation of this repository: 
   ```
