@@ -2,6 +2,9 @@
 
 - Video demos:
   [`Simulation video`](https://youtu.be/WiZtcR9hqvM)
+  
+- Check our blogpost for full documentations and scrum development of this repository.
+  https://blog.uta.edu/cseseniordesign/2021/12/10/project-identify-classify-idc/
 
 - Citation of this repository: 
   ```
