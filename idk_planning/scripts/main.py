@@ -1,13 +1,21 @@
 #!/usr/bin/env python
 
-# local pymodules
+#local pymodules
 from threading import local
 from planning import *
 from vision import *
-
 from copy import deepcopy
 
+class TestROS(unittest.TestCase):
+
+   def test_home(self):
+
+    unit test not needed on main.py, only constants were found in this 
+    source file. HN 12/24/2021
+
 if __name__ == '__main__':
+    unittest.main()
+
     rospy.init_node('vision_planner_node', anonymous=True)
     camera = RSCamera()
     arm = URPlanner(speed=0.25)

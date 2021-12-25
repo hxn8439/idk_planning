@@ -13,6 +13,82 @@ import moveit_commander
 import rospy
 from geometry_msgs.msg import PoseStamped
 
+import unittest
+import unittestrunner
+
+#class TestROS(unittest.TestCase):
+
+    #def test_home(self):
+    #   result = unittestrunner.add(10, 5)
+    #   self.assertEqual(result, 15)
+
+    # table platform
+    #    table_thickness = 0.01
+    #    table_pose_orientation_w = 1.0
+    #    table_pose_position_x = 1.4224 / 4
+    #    table_pose_position_y = 0.0
+    #    table_pose_position_z = -table_thickness / 2.0
+
+    #    result = unittestrunner.value(table_thickness)
+    #    result1 = unittestrunner.value(table_pose_orientation_w)
+    #    result2 = unittestrunner.value(table_pose_position_x)
+    #    result3 = unittestrunner.value(table_pose_position_y)
+    #    result4 = unittestrunner.value(table_pose_position_z)
+
+    #    self.assertEqual(result, 0.01)
+    #    self.assertEqual(result1, 1.0)
+    #    self.assertEqual(result2, 0.3556)
+    #    self.assertEqual(result3, 0.0)
+    #    self.assertEqual(result4, - 0.005)
+
+    # side fences
+        #lfence_pose_orientation_w = 1.0
+        #lfence_pose_position_x = 1.4224 / 4
+        #lfence_pose_position_y = 0.56 / 2 + 0.01 / 2
+        #lfence_pose_position_z = 0.25 / 4
+
+        #result5 = unittestrunner.value(lfence_pose_orientation_w)
+        #result6 = unittestrunner.value(lfence_pose_position_x)
+        #result7 = unittestrunner.value(lfence_pose_position_y)
+        #result8 = unittestrunner.value(lfence_pose_position_z)
+
+        #self.assertEqual(result5, 1.0)
+        #self.assertEqual(result6, 0.3556)
+        #self.assertEqual(result7, ((0.56 / 2) + (0.01 / 2)))
+        #self.assertEqual(result8, 0.0625)
+    
+        #rfence_pose_orientation_w = 1.0
+        #rfence_pose_position_x = 1.4224 / 4
+        #rfence_pose_position_y = -(0.56 / 2 + 0.01 / 2)
+        #rfence_pose_position_z = 0.25 / 4
+
+        #result9 = unittestrunner.value(rfence_pose_orientation_w)
+        #result10 = unittestrunner.value(rfence_pose_position_x)
+        #result11 = unittestrunner.value(rfence_pose_position_y)
+        #result12 = unittestrunner.value(rfence_pose_position_z)
+
+        #self.assertEqual(result9, 1.0)
+        #self.assertEqual(result10, 0.3556)
+        #self.assertEqual(result11, -((0.56 / 2) + (0.01 / 2)))
+        #self.assertEqual(result12, 0.0625) 
+        
+    # workspace limit
+        #zcap_pose_orientation_w = 1.0
+        #zcap_pose_position_x = 1.4224 / 4
+        #zcap_pose_position_y = 0.0
+        #zcap_pose_position_z = 0.8
+
+        #result13 = unittestrunner.value(zcap_pose_orientation_w)
+        #result14 = unittestrunner.value(zcap_pose_position_x)
+        #result15 = unittestrunner.value(zcap_pose_position_y)
+        #result16 = unittestrunner.value(zcap_pose_position_z) 
+
+        #self.assertEqual(result13, 1.0)
+        #self.assertEqual(result14, 0.3556)
+        #self.assertEqual(result15, 0.0)
+        #self.assertEqual(result16, 0.8)
+        
+
 class URPlanner:
     def __init__(self, autohome = False, speed = 1, accel = 1, group_name='manipulator'):
         self.robot = moveit_commander.RobotCommander()
@@ -56,10 +132,10 @@ class URPlanner:
         req.fun = 1
         req.pin = 0
         req.state = 0
-        response = self.io_srv(req)
+       response = self.io_srv(req)
         return response
         
-    def go_to_known_location(self, location_name):
+#    def go_to_known_location(self, location_name):
         if location_name not in self.locations:
             return
         joint_goal = self.move_group.get_current_joint_values()
@@ -74,7 +150,7 @@ class URPlanner:
         wpose.position.x += x
         wpose.position.y += y
         wpose.position.z += z
-        waypoints.append(deepcopy(wpose))
+         waypoints.append(deepcopy(wpose))
         plan, fraction = self.move_group.compute_cartesian_path(waypoints,  # waypoints to follow
                                                                 0.001,      # eef_step
                                                                 0.0)        # jump_threshold         

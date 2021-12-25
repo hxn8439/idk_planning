@@ -7,13 +7,16 @@ from cv_bridge import CvBridge
 from copy import deepcopy
 from math import atan2, cos, sin, sqrt, pi
 
-# ros stuff
-import rospy
-from sensor_msgs.msg import Image
+#ros stuff
+#import rospy
+#from sensor_msgs.msg import Image
+
+#   unit test not needed on vision.py, only constants were found in this 
+#   source file. HN 12/24/2021
         
 class RSCamera:
     def __init__(self, debug=False):
-        # declaring variables
+        declaring variables
         self.color_topic = '/camera/color/image_raw'
         self.info_topic  = '/camera/color/camera_info'
         self.depth_topic = '/camera/aligned_depth_to_color/image_raw'
@@ -23,7 +26,7 @@ class RSCamera:
         self.width = 1280
         self.height = 720
         
-        # wait for topics to dump images out
+        #wait for topics to dump images out
         rospy.wait_for_message(self.color_topic, Image)
         rospy.wait_for_message(self.depth_topic, Image)
         self.color_sub = rospy.Subscriber(self.color_topic, Image, self.handle_color_image)
@@ -75,7 +78,7 @@ class RSCamera:
         
     def handle_color_image(self, msg):
         self.color_frame = self.bridge.imgmsg_to_cv2(msg, msg.encoding)
-        self.color_frame = cv2.cvtColor(self.color_frame, cv2.COLOR_BGR2RGB)
+        #self.color_frame = cv2.cvtColor(self.color_frame, cv2.COLOR_BGR2RGB)
     
     def handle_depth_image(self, msg):
         self.depth_frame = self.bridge.imgmsg_to_cv2(msg, msg.encoding)
@@ -85,7 +88,7 @@ class RSCamera:
         
         cont_image = deepcopy(self.color_frame)
         contours = self.find_contours()
-        cv2.drawContours(cont_image, contours, -1, (0, 255, 0), 1)
+        #cv2.drawContours(cont_image, contours, -1, (0, 255, 0), 1)
         
         xhair_image = deepcopy(self.color_frame)
         centers = self.find_contour_centers(contours, self.observable)
@@ -105,15 +108,15 @@ class RSCamera:
                 box = cv2.boxPoints(rect)
                 box = np.int0(box)
                 cv2.drawContours(pca ,[box],0,(0,0,255),2)
-                # self.getOrientation(c, pca)
+                self.getOrientation(c, pca)
         
-        # cv2.imshow('original', original)
+        cv2.imshow('original', original)
         cv2.imshow('ROIs', roi_image)
-        # cv2.imshow('contours', cont_image)
+        cv2.imshow('contours', cont_image)
         cv2.imshow('crosshairs', xhair_image)
-        # cv2.imshow('PCA', pca)
+        cv2.imshow('PCA', pca)
         
-        cv2.waitKey(1)
+        #cv2.waitKey(1)
         
     def find_contours(self, min_area = 100):
         original = deepcopy(self.color_frame)
@@ -139,47 +142,47 @@ class RSCamera:
         cy = int(moment['m01']/moment['m00'])
         return (cx, cy)
 
-    def greyscale(self, image):
+    #def greyscale(self, image):
         return cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     
-    def gblur(self, image, kernel = 5):
+    #def gblur(self, image, kernel = 5):
         k = (kernel, kernel)
         return cv2.GaussianBlur(image, k, 0)
     
-    def mblur(self, image, kernel = 5):
+    #def mblur(self, image, kernel = 5):
         return cv2.medianBlur(image, kernel)
     
-    def threshold(self, image):
+    #def threshold(self, image):
         _, result = cv2.threshold(image, 240, 255, cv2.THRESH_BINARY_INV)
         return result
     
-    def brighten(self, image, alpha = 2.0, beta = 50):
+    #def brighten(self, image, alpha = 2.0, beta = 50):
         alpha = np.clip(alpha, 1.0, 3.0)
         beta = np.clip(beta, 0.0, 100.0)
         return cv2.convertScaleAbs(image, alpha=alpha, beta=beta)
     
-    def point_in_roi(self, point):
+    #def point_in_roi(self, point):
         px, py = point
         good_x = (px >= self.x_min and px <= self.x_max)
         good_y = (py >= self.y_min and py <= self.y_max)
         return (good_x and good_y)
     
-    def point_in_narrow_roi(self, point):
+    #def point_in_narrow_roi(self, point):
         px, py = point
         good_x = (px >= self.narrow_x_min and px <= self.narrow_x_max)
         good_y = (py >= self.narrow_y_min and py <= self.narrow_y_max)
         return (good_x and good_y)
     
-    def place_crosshair(self, image, position, color = (255, 255, 0)):
+    #def place_crosshair(self, image, position, color = (255, 255, 0)):
         return cv2.drawMarker(image, position, color, markerSize=10)
     
-    def place_text(self, image, position, text, color = (255, 255, 0), scale = 0.4):
+    #def place_text(self, image, position, text, color = (255, 255, 0), scale = 0.4):
         x, y = position
         x -= int(len(text) * 3.5)
         y += 20
         return cv2.putText(image, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, scale, color, lineType=cv2.LINE_AA)
     
-    def distance_to_camera(self, point):
+    #def distance_to_camera(self, point):
         ratio = self.full_ratio if self.observable == 'full' else self.narrow_ratio
         px, py = point
         cx, cy = self.camera_center
