@@ -10,6 +10,10 @@
   ```
     Nguyen, H., Yi, J., Vu, T., Wellington, M., Safder, M., Automation of the UR5 pick, place, and sort in Physical Environment with a RealSense camera and vacuum suction gripper. (Bionic Distribution), (2021), Github repository, https://github.com/hxn8439/idk_planning.git
   ```
+#### Python Unit Test
+
+![Screenshot](/Unit Test python.png)
+
 #### How to use this repository
 - This project was executed in Ubuntu 20.04 with ROS Bionic distribution.
 - Make sure that you installed docker on Ubuntu 20.04 and create an image file using Bionic distribution. 
