@@ -1,0 +1,161 @@
+Directory of C:\Users\dienadel\Documents\GitHub\idk_planning\idk_planning\scripts
+
+12/24/2021  11:34 PM    <DIR>          .
+12/24/2021  11:34 PM    <DIR>          ..
+12/24/2021  11:28 PM             1,845 main.py
+12/24/2021  11:28 PM             9,603 planning.py
+12/24/2021  01:00 AM             6,400 planning.pyc
+12/24/2021  11:34 PM                 0 prospector
+12/24/2021  11:28 PM                94 unittestrunner.py
+12/24/2021  11:28 PM             9,508 vision.py
+12/24/2021  01:00 AM            10,277 vision.pyc
+12/24/2021  11:28 PM    <DIR>          __pycache__
+               7 File(s)         37,727 bytes
+               3 Dir(s)  133,234,937,856 bytes free
+
+C:\Users\dienadel\Documents\GitHub\idk_planning\idk_planning\scripts>prospector
+Messages
+========
+
+main.py
+  Line: 13
+    pylint: syntax-error / invalid syntax (<unknown>, line 13) (col 10)
+  Line: 16
+    pep8: E305 / expected 2 blank lines after class or function definition, found 1 (col 1)
+  Line: 51
+    pep8: E722 / do not use bare 'except' (col 5)
+
+planning.py
+  Line: 21
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 22
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 23
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 25
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 26
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 27
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 28
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 29
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 30
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 32
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 33
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 34
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 35
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 36
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 38
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 39
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 40
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 41
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 42
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 44
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 45
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 46
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 47
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 48
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 50
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 51
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 52
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 53
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 55
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 56
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 57
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 58
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 60
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 61
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 62
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 63
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 65
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 66
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 67
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 68
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 70
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 71
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 72
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 73
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 75
+    pep8: E116 / unexpected indentation (comment) (col 5)
+  Line: 76
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 77
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 78
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 79
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 81
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 82
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 83
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 84
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 86
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 87
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 88
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 89
+    pep8: E116 / unexpected indentation (comment) (col 9)
+  Line: 135
+    pylint: syntax-error / unindent does not match any outer indentation level (<unknown>, line 135) (col 35)
+
+vision.py
+  Line: 19
+    pylint: syntax-error / invalid syntax (<unknown>, line 19) (col 19)
+
+
+
+Check Information
+=================
+         Started: 2021-12-24 23:35:52.866571
+        Finished: 2021-12-24 23:35:53.821574
+      Time Taken: 0.96 seconds
+       Formatter: grouped
+        Profiles: default, no_doc_warnings, no_test_warnings, strictness_medium, strictness_high, strictness_veryhigh, no_member_warnings
+      Strictness: None
+  Libraries Used:
+       Tools Run: dodgy, mccabe, pep8, profile-validator, pyflakes, pylint
